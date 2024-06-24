@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# Vite, React, TailwindCSS Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## To-dos
 
-Currently, two official plugins are available:
+- [ ] Horizontal Scroll
+- [ ] Infinite Scroll
+- [ ] Select
+- [ ] Custom Radio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Horizontal Scroll
 
-## Expanding the ESLint configuration
+- 가로 스크롤이 가능한 컴포넌트
+- 모바일에서 터치로 스크롤
+- 데스크탑에서 스크롤 UX 개선
+- 재 사용 가능한 컴포넌트
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Infinite Scroll
 
-- Configure the top-level `parserOptions` property like this:
+- 무한 스크롤이 가능한 컴포넌트
+- 초기 로딩 URL 또는 데이터 목록
+- 스크롤 시 추가 데이터 로딩
+- 특정 스크롤 위치 도달 시 추가 데이터 로딩(요소의 높이에 따라 자연스러운 위치 계산)
+- 재 사용 가능한 컴포넌트
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Select
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- UI 커스텀이 가능한 셀렉트 컴포넌트
+- 기본 셀렉트 컴포넌트와 동일한 기능
+- 셀렉트 박스 열기/닫기
+- 영역 외 클릭 시 셀렉트 박스 닫기
+- 열기/닫기, 항목 선택, 변경 등 이벤트 구현
+- 재 사용 가능한 컴포넌트
+
+## Custom Radio
+
+- 디자인 가능한 버튼 컴포넌트를 활용한 라디오 컴포넌트
+- 기본 라디오 컴포넌트와 동일한 기능
+- 라디오 버튼 내 컴포넌트로 UI 커스텀 가능
+- 라디오 버튼 선택 시 이벤트 구현
+- 라디오 버튼 선택 시 UI 변경
+- 재 사용 가능한 컴포넌트
