@@ -2,7 +2,6 @@
 
 ## To-dos
 
-- [ ] Horizontal Scroll
 - [ ] Infinite Scroll
 - [ ] Select
 - [ ] Custom Radio
