@@ -2,7 +2,6 @@
 
 ## To-dos
 
-- [ ] Horizontal Scroll
 - [ ] Infinite Scroll
 - [ ] Select
 - [ ] Custom Radio
@@ -12,6 +11,7 @@
 - 가로 스크롤이 가능한 컴포넌트
 - 모바일에서 터치로 스크롤
 - 데스크탑에서 스크롤 UX 개선
+  - 클릭으로 드래그 또는 좌우 화살표 클릭으로 스크롤
 - 재 사용 가능한 컴포넌트
 
 ## Infinite Scroll
