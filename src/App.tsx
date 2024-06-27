@@ -16,6 +16,12 @@ function App() {
         { label: 'Option 3', value: 'option3' },
         { label: 'Option asjdksajdlksajdk', value: 'option4' },
       ]} />
+      <Select id="test2" className='min-w-32' disabled optionList={[
+        { label: 'Option 1', value: 'option1' },
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' },
+        { label: 'Option asjdksajdlksajdk', value: 'option4' },
+      ]} />
     </div>
   )
 }

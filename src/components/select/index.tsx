@@ -32,6 +32,7 @@ export default function Select({
   defaultValue,
   optionList,
   className,
+  disabled,
 }: {
   name?: string,
   id?: string,
@@ -42,6 +43,7 @@ export default function Select({
   defaultValue?: string,
   optionList: Option[],
   className?: string,
+  disabled?: boolean,
 }) {
   const [isOpen, _setIsOpen] = useState(false);
 
@@ -65,7 +67,11 @@ export default function Select({
 
   return <div className="relative">
     <input type="hidden" name={name} id={id} value={value} />
-    <div className={"flex justify-between items-center bg-white py-2 pl-4 pr-2 border rounded cursor-pointer w-fit " + (className || "")} onClick={() => {
+    <div className={cn("flex justify-between items-center bg-white py-2 pl-4 pr-2 border rounded cursor-pointer w-fit ", className, {
+      "bg-gray-500 cursor-default": disabled,
+    })} onClick={() => {
+      if (disabled) return;
+
       setIsOpen((prev) => !prev);
       onClick && onClick(value);
     }}>
@@ -73,12 +79,12 @@ export default function Select({
         return (option.value === value);
       })?.label || "Select"}
 
-      <svg className="fill-black w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" />
+      <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 10 4 4 4-4" />
       </svg>
 
     </div>
-    {isOpen && <div className="bg-white min-w-32 absolute p-3 border rounded mt-1 flex flex-col gap-2">{
+    {isOpen && <div className="z-10 bg-white min-w-32 absolute p-3 border rounded mt-1 flex flex-col gap-2">{
       optionList.map((option, index) => {
         return <CommonOption label={option.label} value={option.value} key={`${option.value}_${index}`} onSelect={() => {
           setValue(option.value);
