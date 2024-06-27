@@ -3,7 +3,6 @@
 ## To-dos
 
 - [ ] Infinite Scroll
-- [ ] Select
 - [ ] Custom Radio
 
 ## Horizontal Scroll
