@@ -61,14 +61,14 @@ export default function Select({
   useEffect(() => {
 
     // 드랍다운이 열릴 때, 드랍다운이 화면 밖으로 나가지 않도록 위치 조정
-    if (!isOpen) return;
-
-    const dropdown = dropdownRef.current;
-    if (dropdown) {
-      const rect = dropdown.getBoundingClientRect();
-      if (rect.right > window.innerWidth) {
-        dropdown.style.transform = `translateX(${window.innerWidth - rect.right - 8
-          }px)`;
+    if (isOpen) {
+      const dropdown = dropdownRef.current;
+      if (dropdown) {
+        const rect = dropdown.getBoundingClientRect();
+        if (rect.right > window.innerWidth) {
+          dropdown.style.transform = `translateX(${window.innerWidth - rect.right - 8
+            }px)`;
+        }
       }
     }
 
