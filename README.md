@@ -4,6 +4,7 @@
 
 - [ ] Infinite Scroll
 - [ ] Custom Radio
+- [ ] 모바일 대응
 
 ## Horizontal Scroll
 
