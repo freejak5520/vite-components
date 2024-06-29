@@ -3,8 +3,8 @@
 ## To-dos
 
 - [ ] Infinite Scroll
-- [ ] Select
 - [ ] Custom Radio
+- [ ] 모바일 대응
 
 ## Horizontal Scroll
 
