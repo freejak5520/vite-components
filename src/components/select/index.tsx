@@ -1,4 +1,4 @@
-import { SetStateAction, useCallback, useEffect, useState } from "react";
+import { SetStateAction, useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "../../lib/utils";
 
 type Option = {
@@ -45,6 +45,7 @@ export default function Select({
   className?: string,
   disabled?: boolean,
 }) {
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, _setIsOpen] = useState(false);
 
   const setIsOpen = useCallback((value: SetStateAction<boolean>) => {
@@ -58,11 +59,28 @@ export default function Select({
   }, [value]);
 
   useEffect(() => {
+
+    // 드랍다운이 열릴 때, 드랍다운이 화면 밖으로 나가지 않도록 위치 조정
+    if (!isOpen) return;
+
+    const dropdown = dropdownRef.current;
+    if (dropdown) {
+      const rect = dropdown.getBoundingClientRect();
+      if (rect.right > window.innerWidth) {
+        dropdown.style.transform = `translateX(${window.innerWidth - rect.right - 8
+          }px)`;
+      }
+    }
+
     if (isOpen) {
       onOpen && onOpen();
     } else {
       onClose && onClose();
     }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   return <div className="relative">
@@ -84,7 +102,7 @@ export default function Select({
       </svg>
 
     </div>
-    {isOpen && <div className="z-10 bg-white min-w-32 absolute p-3 border rounded mt-1 flex flex-col gap-2">{
+    {isOpen && <div ref={dropdownRef} className="z-10 bg-white min-w-32 absolute p-3 border rounded mt-1 flex flex-col gap-2">{
       optionList.map((option, index) => {
         return <CommonOption label={option.label} value={option.value} key={`${option.value}_${index}`} onSelect={() => {
           setValue(option.value);
