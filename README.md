@@ -2,6 +2,7 @@
 
 ## To-dos
 
+- [ ] Infinite Horizontal Scroll
 - [ ] Infinite Scroll
 - [ ] Custom Radio
 - [ ] 모바일 대응
